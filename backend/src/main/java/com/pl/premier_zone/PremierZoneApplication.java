@@ -20,7 +20,7 @@ public WebMvcConfigurer corsConfigurer() {
         public void addCorsMappings(CorsRegistry registry) {
             // Update this with the URL of your frontend on Vercel
             registry.addMapping("/**")
-                    .allowedOrigins("https://premierleague-stats.vercel.app")  // Frontend URL
+                    .allowedOrigins("premierleague-stats.vercel.app")  // Frontend URL
                     .allowedMethods("GET", "POST", "PUT", "DELETE") // Allowed HTTP methods
                     .allowedHeaders("*")  // Allow all headers
                     .allowCredentials(true);  // If you need to send credentials like cookies
