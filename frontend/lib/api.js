@@ -1,5 +1,7 @@
 export async function fetchPlayers() {
-  const response = await fetch("http://localhost:8080/api/v1/players");
+  const response = await fetch(
+    "https://premierleague-stats.onrender.com/api/v1/players"
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch players");
   }
@@ -7,7 +9,9 @@ export async function fetchPlayers() {
 }
 
 export async function fetchTeams() {
-  const response = await fetch("http://localhost:8080/api/v1/teams");
+  const response = await fetch(
+    "https://premierleague-stats.onrender.com/api/v1/teams"
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch teams");
   }
@@ -15,7 +19,9 @@ export async function fetchTeams() {
 }
 
 export async function fetchTeamDetails(slug) {
-  const response = await fetch(`http://localhost:8080/api/v1/teams/${slug}`);
+  const response = await fetch(
+    `https://premierleague-stats.onrender.com/api/v1/teams/${slug}`
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch team details");
   }
