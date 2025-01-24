@@ -17,14 +17,11 @@ public class PremierZoneApplication {
 public WebMvcConfigurer corsConfigurer() {
     return new WebMvcConfigurer() {
         @Override
-        public void addCorsMappings(CorsRegistry registry) {
-            // Update this with the URL of your frontend on Vercel
-            registry.addMapping("/**")
-                    .allowedOrigins("premierleague-stats.vercel.app")  // Frontend URL
-                    .allowedMethods("GET", "POST", "PUT", "DELETE") // Allowed HTTP methods
-                    .allowedHeaders("*")  // Allow all headers
-                    .allowCredentials(true);  // If you need to send credentials like cookies
-        }
+         public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/api/**")
+                        .allowedOrigins("http://localhost:3000", "https://premierleague-stats.vercel.app/")
+                        .allowedMethods("GET");
+            }
     };
 }
 }
