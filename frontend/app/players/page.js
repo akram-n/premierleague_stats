@@ -61,6 +61,10 @@ export default function PlayersPage() {
           <div className="flex justify-center items-center py-10">
             <div className="flex justify-center">
               <div className="w-12 h-12 border-4 border-gray-300 border-t-gray-500 rounded-full animate-spin"></div>
+              <p className="mt-4 text-gray-400 text-sm text-center">
+                Please wait... The server may take up to 50 seconds to respond
+                due to inactivity.
+              </p>
             </div>
           </div>
         ) : error ? (
