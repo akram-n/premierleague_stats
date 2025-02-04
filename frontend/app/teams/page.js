@@ -25,7 +25,7 @@ export default function TeamsPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600">
         <div className="w-12 h-12 border-4 border-gray-300 border-t-gray-500 rounded-full animate-spin"></div>
         <p className="mt-4 text-gray-400 text-sm text-center">
           Please wait... The server may take up to 50 seconds to respond due to
