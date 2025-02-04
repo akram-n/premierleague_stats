@@ -5,6 +5,7 @@ import { fetchTeams } from "@/lib/api";
 
 export default function TeamsPage() {
   const [teams, setTeams] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -15,15 +16,25 @@ export default function TeamsPage() {
         setTeams(sortedTeams);
       } catch (err) {
         setError(err.message);
+      } finally {
+        setLoading(false);
       }
     }
     getTeams();
   }, []);
 
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-gray-500 rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
   if (error) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600">
-        <p className="text-xl font-bold">Error: {error}</p>
+        <p className="text-xl font-bold text-red-400">Error: {error}</p>
       </div>
     );
   }
