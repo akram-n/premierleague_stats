@@ -9,7 +9,7 @@ public class Team {
     private Integer totalAssists;
     private Integer totalYellowCards;
     private Integer totalRedCards;
-    private List<Player> players; // Store full Player objects
+    private List<Player> players;
 
     public Team(String name, Integer totalGoals, Integer totalAssists, Integer totalYellowCards, Integer totalRedCards, List<Player> players) {
         this.name = name;
@@ -20,7 +20,6 @@ public class Team {
         this.players = players;
     }
 
-    // Getters and Setters
     public String getName() {
         return name;
     }

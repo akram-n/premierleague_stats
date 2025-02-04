@@ -11,12 +11,10 @@ public interface PlayerRepository extends JpaRepository<Player, String> {
     void deleteByName(String playerName);
     Optional<Player> findByName(String name);
 
-    // Filtering methods
     List<Player> findByTeam(String team);
     List<Player> findByNation(String nation);
     List<Player> findByPos(String pos);
 
-    // Combined filtering methods
     List<Player> findByTeamAndNation(String team, String nation);
     List<Player> findByTeamAndPos(String team, String pos);
     List<Player> findByNationAndPos(String nation, String pos);

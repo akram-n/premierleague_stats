@@ -24,7 +24,6 @@ public class PlayerService {
         calculateAdvancedMetrics(updatedPlayer);
         return playerRepository.save(updatedPlayer);
     }
-    // New filtering logic
     public List<Player> filterPlayers(String team, String nation, String pos) {
         if (team != null && nation != null && pos != null) {
             return playerRepository.findByTeamAndNationAndPos(team, nation, pos);
@@ -41,7 +40,7 @@ public class PlayerService {
         } else if (pos != null) {
             return playerRepository.findByPos(pos);
         } else {
-            return playerRepository.findAll(); // No filters applied
+            return playerRepository.findAll();
         }
     }
 

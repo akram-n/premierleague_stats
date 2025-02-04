@@ -17,10 +17,9 @@ public class TeamService {
         List<Player> players = playerRepository.findAll();
         Map<String, Team> teamMap = new HashMap<>();
 
-        // Aggregate stats and player details by team
         for (Player player : players) {
             String teamName = player.getTeam();
-            if (teamName == null || teamName.isEmpty()) continue; // Skip players with no team
+            if (teamName == null || teamName.isEmpty()) continue; 
 
             teamMap.putIfAbsent(teamName, new Team(
                     teamName, 0, 0, 0, 0, new ArrayList<>()
@@ -31,7 +30,7 @@ public class TeamService {
             team.setTotalAssists(team.getTotalAssists() + player.getAst().intValue());
             team.setTotalYellowCards(team.getTotalYellowCards() + player.getCrdy().intValue());
             team.setTotalRedCards(team.getTotalRedCards() + player.getCrdr().intValue());
-            team.getPlayers().add(player); // Add the full Player object
+            team.getPlayers().add(player);
         }
 
         return new ArrayList<>(teamMap.values());
@@ -46,14 +45,13 @@ public class TeamService {
             throw new IllegalArgumentException("Team not found: " + name);
         }
 
-        // Aggregate stats for the specific team
         Team team = new Team(
                 name,
                 players.stream().mapToInt(player -> player.getGls().intValue()).sum(),
                 players.stream().mapToInt(player -> player.getAst().intValue()).sum(),
                 players.stream().mapToInt(player -> player.getCrdy().intValue()).sum(),
                 players.stream().mapToInt(player -> player.getCrdr().intValue()).sum(),
-                players // Add the list of Player objects
+                players
         );
 
         return team;

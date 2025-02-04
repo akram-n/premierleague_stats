@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Primary key
+    private Long id;
 
     @Column(name = "player", unique = true)
     private String name;
@@ -40,9 +40,9 @@ public class Player {
 
     private String team;
 
-    private Double gls90; // Goals per 90 minutes
+    private Double gls90;
 
-    private Double ast90; // Assists per 90 minutes
+    private Double ast90;
 
     public Player() {}
 
@@ -70,7 +70,6 @@ public class Player {
         this.ast90 = ast90;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
