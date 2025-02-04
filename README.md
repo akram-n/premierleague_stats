@@ -8,15 +8,35 @@ The Player Stats App allows users to view, manage, and compare Premier League pl
 
 - View player and team statistics.
 - Compare player stats across different teams.
-- Built with modern web technologies for a fast and responsive experience.
-- Backend is containerized with Docker for easy deployment.
-- PostgreSQL database hosted on Render for reliable data storage.
-- Frontend deployed on Vercel for seamless hosting.
 
 ## Technologies Used
 
-- **Frontend:** React, Next.js, Tailwind CSS
-- **Backend:** Java, Spring Boot
-- **Database:** PostgreSQL
-- **Deployment:** Docker, Render (for backend and database), Vercel (for frontend)
-- **Version Control:** Git, GitHub
+- **Backend**: Spring Boot, Java
+- **Frontend**: React.js, Next.js, Tailwind CSS
+- **Database**: PostgreSQL
+- **Containerization**: Docker
+- **Hosting**: Vercel (Frontend), Render (Backend and Database)
+
+## Running the App
+
+To run the Player Stats App locally, follow these steps:
+
+1. **Clone the repository**
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the app**:
+
+   Use the following command to start both the backend and frontend:
+
+   ```bash
+   npm start
+   ```
+
+4. **Access the app**:
+
+   Once both servers are running, open your browser and navigate to `http://localhost:3000` to view the app.
