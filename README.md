@@ -17,7 +17,11 @@ The Player Stats App allows users to view, manage, and compare Premier League pl
 - **Containerization**: Docker
 - **Hosting**: Vercel (Frontend), Render (Backend and Database)
 
-## Running the App
+## Live Demo
+
+You can try the live version of the app here: [Live App](https://premierleague-stats.vercel.app)
+
+## Running the App Locally
 
 To run the Player Stats App locally, follow these steps:
 
